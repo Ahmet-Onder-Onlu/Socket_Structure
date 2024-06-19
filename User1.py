@@ -1,10 +1,12 @@
 import socket
 
+# This is func which contain sender's infos
 def send_message(message, host, port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
         s.sendall(message.encode())
 
+# This is func which contain receive's infos
 def receive_message(port):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(('127.0.0.1', port))
